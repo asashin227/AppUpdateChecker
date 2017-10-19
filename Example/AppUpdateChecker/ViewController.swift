@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AppUpdateChecker
 
 class ViewController: UIViewController {
 
@@ -19,6 +20,23 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        AppUpdateChecker().conferm() {
+            result in
+            switch result {
+            case .existUpdate(let version, let storeScheme):
+                print("Now available version: \(version)")
+                print("DL from hare: \(storeScheme.absoluteString)")
+            case .noUpdate:
+                print("Current version is newest")
+            case .error(let error):
+                print("error: \(error)")
+            }
+        }
+        
+    }
 }
 

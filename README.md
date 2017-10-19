@@ -20,10 +20,6 @@ it, simply add the following line to your Podfile:
 pod 'AppUpdateChecker'
 ```
 
-## Author
-
-asashin227, asa.shin.asa@gmail.com
-
 ## License
 
 AppUpdateChecker is available under the MIT license. See the LICENSE file for more info.

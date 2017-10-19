@@ -43,10 +43,10 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		644593C95826916D07FF50DD /* Pods_AppUpdateChecker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppUpdateChecker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B2E1CC934B6926B7D41F8AE /* Pods-AppUpdateChecker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppUpdateChecker_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppUpdateChecker_Example/Pods-AppUpdateChecker_Example.release.xcconfig"; sourceTree = "<group>"; };
-		A52621C219EBD652C532269C /* AppUpdateChecker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = AppUpdateChecker.podspec; path = ../AppUpdateChecker.podspec; sourceTree = "<group>"; };
+		A52621C219EBD652C532269C /* AppUpdateChecker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AppUpdateChecker.podspec; path = ../AppUpdateChecker.podspec; sourceTree = "<group>"; };
 		A7F24D7ECE5B9BD057381689 /* Pods-AppUpdateChecker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppUpdateChecker_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppUpdateChecker_Example/Pods-AppUpdateChecker_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AB6C1BE6CB83F75BA7B473A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		C0E85064EE51BADBC24C1698 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AB6C1BE6CB83F75BA7B473A9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		C0E85064EE51BADBC24C1698 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,10 +215,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = JJVBMKS8RG;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = JJVBMKS8RG;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -526,10 +528,11 @@
 			baseConfigurationReference = A7F24D7ECE5B9BD057381689 /* Pods-AppUpdateChecker_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JJVBMKS8RG;
 				INFOPLIST_FILE = AppUpdateChecker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.AppUpdateChecker-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -541,10 +544,11 @@
 			baseConfigurationReference = 6B2E1CC934B6926B7D41F8AE /* Pods-AppUpdateChecker_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = JJVBMKS8RG;
 				INFOPLIST_FILE = AppUpdateChecker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.AppUpdateChecker-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -555,6 +559,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 314C03C4F43DC03C6D813AC5 /* Pods-AppUpdateChecker_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = JJVBMKS8RG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -576,6 +581,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C48BF06D4AFE247D692BD8A /* Pods-AppUpdateChecker_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = JJVBMKS8RG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
