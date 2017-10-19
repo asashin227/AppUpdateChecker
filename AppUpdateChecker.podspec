@@ -12,12 +12,16 @@ Pod::Spec.new do |s|
   s.summary          = 'AppUpdateChecker conferm new version application in AppStore.'
 
 # This description is used to generate tags and improve search results.
-For example, in one library we set up an AppID, but this is not necessary.
-'Bundle identifier' and 'Bundle versions string, short' in Info.plist is used in AppUpdateChecker.
+#   * Think: What does it do? Why did you write it? What is the focus?
+#   * Try to keep it short, snappy and to the point.
+#   * Write the description between the DESC delimiters below.
+#   * Finally, don't worry about the indent, CocoaPods strips it!
 
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+For example, in one library we set up an AppID, but this is not necessary.
+'Bundle identifier' and 'Bundle versions string, short' in Info.plist is used in AppUpdateChecker.
+
                        DESC
 
   s.homepage         = 'https://github.com/asashin227/AppUpdateChecker'
