@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // This example is always error
+        // because this example have Bundle Identifier is not found on AppStore.
         AppUpdateChecker().conferm() {
             result in
             switch result {

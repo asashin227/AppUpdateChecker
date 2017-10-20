@@ -58,14 +58,14 @@ public struct AppUpdateChecker {
 }
 
 extension AppUpdateChecker {
-    private func serialize(data: Data) throws -> [String : Any]?  {
+    func serialize(data: Data) throws -> [String : Any]?  {
         guard let obj = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : Any] else {
             return nil
         }
         return obj
     }
     
-    private func extractVersion(info: [String : Any]) throws -> String? {
+    func extractVersion(info: [String : Any]) throws -> String? {
         guard let resCount = info["resultCount"] as? Int else {
             throw AUCError.itunesAPIError
         }
@@ -81,7 +81,7 @@ extension AppUpdateChecker {
         return version
     }
     
-    private func makeStoreScheme(info: [String : Any]) throws -> URL? {
+    func makeStoreScheme(info: [String : Any]) throws -> URL? {
         guard let resCount = info["resultCount"] as? Int else {
             throw AUCError.itunesAPIError
         }
