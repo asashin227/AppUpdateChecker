@@ -26,7 +26,13 @@ class ViewController: UIViewController {
         
         // This example is always error
         // because this example have Bundle Identifier is not found on AppStore.
-        AppUpdateChecker().conferm() {
+        
+        
+    }
+  
+    @IBOutlet weak var textField: UITextField!
+    @IBAction func didTap(_ sender: Any) {
+        AppUpdateChecker().conferm(bundleId: textField.text ?? "") {
             result in
             switch result {
             case .existUpdate(let version, let storeScheme):
@@ -38,7 +44,6 @@ class ViewController: UIViewController {
                 print("error: \(error)")
             }
         }
-        
     }
 }
 
