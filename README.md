@@ -15,9 +15,9 @@ And using [iTunes API](https://affiliate.itunes.apple.com/resources/documentatio
 AppUpdateChecker().conferm() {
     result in
     switch result {
-    case .existUpdate(let version, let storeScheme):
-        // For example, Show UIAlertController here.
+    case .existUpdate(let version, let releaseDate, let storeScheme):
         print("Now available version: \(version)")
+        print("Release Date: \(releaseDate)")
         print("DL from hare: \(storeScheme.absoluteString)")
     case .noUpdate:
         print("Current version is newest")
