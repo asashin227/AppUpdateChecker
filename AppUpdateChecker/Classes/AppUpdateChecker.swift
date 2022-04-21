@@ -11,11 +11,12 @@ public struct AppUpdateChecker {
     public enum AUCError: Error {
         case appNotFountOnAppStore
         case unknownVersion
+        case unknownDate
         case itunesAPIError
     }
     
     public enum AppVersionResult {
-        case existUpdate(newestVersion: String, storeScheme: URL)
+        case existUpdate(newestVersion: String, releaseDate: Date, storeScheme: URL)
         case noUpdate
         case error(Error)
     }
@@ -40,6 +41,10 @@ public struct AppUpdateChecker {
                         compleation(.error(AUCError.unknownVersion))
                         return
                 }
+                guard let releaseDate = try self.extractCurrentVersionReleaseDate(info: info) else {
+                        compleation(.error(AUCError.unknownDate))
+                        return
+                }
                 if version <= currentVersion {
                     compleation(.noUpdate)
                     return
@@ -49,7 +54,7 @@ public struct AppUpdateChecker {
                     compleation(.error(AUCError.unknownVersion))
                     return
                 }
-                compleation(.existUpdate(newestVersion: version, storeScheme: scheme))
+                compleation(.existUpdate(newestVersion: version, releaseDate: releaseDate, storeScheme: scheme))
             } catch {
                 compleation(.error(error))
             }
@@ -79,6 +84,23 @@ extension AppUpdateChecker {
                 throw AUCError.itunesAPIError
         }
         return version
+    }
+    
+    func extractCurrentVersionReleaseDate(info: [String : Any]) throws -> Date? {
+        guard let resCount = info["resultCount"] as? Int else {
+            throw AUCError.itunesAPIError
+        }
+        if resCount <= 0 {
+            throw AUCError.appNotFountOnAppStore
+        }
+        
+        guard let results = info["results"] as? [[String : Any]],
+            let firstResult = results.first,
+            let releaseDateString = firstResult["currentVersionReleaseDate"] as? String else {
+                throw AUCError.itunesAPIError
+        }
+        let date = ISO8601DateFormatter().date(from: releaseDateString)
+        return date
     }
     
     func makeStoreScheme(info: [String : Any]) throws -> URL? {
