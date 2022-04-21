@@ -1,0 +1,6 @@
+framework module Pods_AppUpdateChecker_Example {
+  umbrella header "Pods-AppUpdateChecker_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
